@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NKH Store - Dark Gold Luxury E-Commerce</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+              600: '#ca8a04',
+              700: '#a16207',
+              gradientFrom: '#f59e0b',
+              gradientTo: '#d97706',
+            },
+            dark: {
+              900: '#0b0b0f',
+              800: '#12131a',
+              700: '#1a1c26',
+              600: '#262938'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0f;
+      color: #e5e7eb;
+      overflow-x: hidden;
+    }
+
+    /* Custom Metallic Gold Gradients and Glow Effects */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #fff176 0%, #ffd54f 30%, #ffb300 70%, #ff8f00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bg-gold-gradient {
+      background: linear-gradient(135deg, #ffd54f 0%, #ffb300 50%, #b78103 100%);
+    }
+
+    .bg-gold-gradient-hover:hover {
+      background: linear-gradient(135deg, #ffe082 0%, #ffc107 50%, #c69214 100%);
+    }
+
+    .border-gold-glow {
+      border: 1px solid rgba(255, 179, 0, 0.35);
+      box-shadow: 0 0 15px rgba(255, 179, 0, 0.15);
+    }
+
+    .border-gold-glow:focus-within, .border-gold-glow:hover {
+      border-color: rgba(255, 179, 0, 0.7);
+      box-shadow: 0 0 22px rgba(255, 179, 0, 0.3);
+    }
+
+    .gold-box-shadow {
+      box-shadow: 0 10px 30px -10px rgba(255, 179, 0, 0.25);
+    }
+
+    /* Subtle pulse glow animation */
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(255, 179, 0, 0.2); }
+      50% { box-shadow: 0 0 30px rgba(255, 179, 0, 0.45); }
+    }
+
+    .animate-pulse-glow {
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0b0f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #262938;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ffb300;
+    }
+  </style>
+
+
+  <!-- NKH STORE PREMIUM BACKGROUND FX ADD-ON -->
+  <style id="nkh-premium-background-fx">
+    body {
+      background-color: #08090d;
+      background-image:
+        radial-gradient(ellipse at 12% 18%, rgba(234,179,8,.13) 0%, transparent 35%),
+        radial-gradient(ellipse at 88% 26%, rgba(245,158,11,.10) 0%, transparent 32%),
+        radial-gradient(ellipse at 52% 88%, rgba(180,83,9,.12) 0%, transparent 40%),
+        linear-gradient(125deg, #08090d 0%, #111018 32%, #0b0c12 62%, #151006 100%);
+      background-size: 180% 180%;
+      animation: nkhBackgroundBreath 22s ease-in-out infinite alternate;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .48;
+      background-image:
+        radial-gradient(1.5px 1.5px at 8% 17%, rgba(255,224,130,.9) 99%, transparent),
+        radial-gradient(1px 1px at 21% 73%, rgba(255,190,50,.75) 99%, transparent),
+        radial-gradient(2px 2px at 37% 42%, rgba(255,235,170,.65) 99%, transparent),
+        radial-gradient(1px 1px at 58% 16%, rgba(255,190,50,.8) 99%, transparent),
+        radial-gradient(1.5px 1.5px at 73% 66%, rgba(255,224,130,.7) 99%, transparent),
+        radial-gradient(1px 1px at 91% 34%, rgba(255,190,50,.8) 99%, transparent),
+        linear-gradient(115deg, transparent 0%, rgba(255,190,50,.025) 48%, transparent 53%);
+      background-size: 280px 280px, 360px 360px, 430px 430px, 310px 310px, 390px 390px, 330px 330px, 220% 100%;
+      animation: nkhStarDrift 42s linear infinite, nkhStarTwinkle 6s ease-in-out infinite alternate;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -35%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .22;
+      background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(234,179,8,.13) 35deg, transparent 75deg, rgba(245,158,11,.08) 150deg, transparent 205deg, rgba(255,224,130,.08) 265deg, transparent 330deg);
+      filter: blur(55px);
+      animation: nkhAuroraTurn 48s linear infinite;
+    }
+    /* Keep site content above the decorative background layers. */
+    body > * { position: relative; z-index: 1; }
+    body > script, body > style { position: static; z-index: auto; }
+    @keyframes nkhBackgroundBreath {
+      0% { background-position: 0% 35%; }
+      50% { background-position: 100% 65%; }
+      100% { background-position: 30% 100%; }
+    }
+    @keyframes nkhStarDrift {
+      from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0% 50%; }
+      to { background-position: 0 560px, 180px -420px, -260px 360px, 320px 500px, -180px -300px, 260px 420px, 100% 50%; }
+    }
+    @keyframes nkhStarTwinkle { from { opacity: .22; } to { opacity: .58; } }
+    @keyframes nkhAuroraTurn { from { transform: rotate(0deg) scale(1); } to { transform: rotate(360deg) scale(1.08); } }
+    @media (prefers-reduced-motion: reduce) {
+      body, body::before, body::after { animation: none !important; }
+    }
+  </style>
+
+  <!-- NKH STORE HOME PAGE ANIMATION ADD-ON (original site styles preserved) -->
+  <style id="nkh-home-animation-addon">
+    #page-home .nkh-hero-animated {
+      isolation: isolate;
+      background-size: 180% 180%;
+      animation: nkhGradientDrift 14s ease-in-out infinite alternate;
+    }
+    #page-home .nkh-hero-animated::before {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,190,35,.13), transparent 56%),
+                  linear-gradient(115deg, transparent 25%, rgba(255,255,255,.035) 48%, transparent 68%);
+      background-size: 100% 100%, 220% 100%;
+      animation: nkhLightSweep 9s ease-in-out infinite;
+    }
+    #page-home .nkh-hero-animated > .nkh-sparkle-layer {
+      position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:1;
+    }
+    #page-home .nkh-sparkle {
+      position:absolute; bottom:-18px; left:var(--x); width:var(--size); height:var(--size);
+      border-radius:50%; opacity:0; background:#ffd66b;
+      box-shadow:0 0 9px 2px rgba(255,190,35,.35);
+      animation:nkhSparkleRise var(--duration) linear var(--delay) infinite;
+    }
+    #page-home .nkh-hero-animated > .relative.z-10 { z-index:2; }
+    #page-home #heroLogoImage {
+      animation:nkhLogoFloat 4.5s ease-in-out infinite;
+      filter: drop-shadow(0 0 9px rgba(255,190,35,.18));
+    }
+    #page-home .nkh-logo-ring {
+      position:absolute; inset:-7px; border:1px solid rgba(255,193,48,.55); border-radius:50%;
+      pointer-events:none; animation:nkhRingPulse 3.2s ease-out infinite;
+    }
+    #page-home .nkh-logo-ring.nkh-ring-two { inset:-13px; animation-delay:1.6s; opacity:.6; }
+    #page-home #heroHeadline { animation:nkhHeadlineEnter .9s cubic-bezier(.2,.75,.2,1) both; }
+    #page-home #heroSubtitle { animation:nkhFadeUp 1s .18s both; }
+    #page-home #heroShopBtn, #page-home #heroTelegramBtn {
+      position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease;
+    }
+    #page-home #heroShopBtn::after, #page-home #heroTelegramBtn::after {
+      content:""; position:absolute; inset:-20% auto -20% -55%; width:35%; transform:skewX(-20deg);
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+      animation:nkhButtonShine 5.5s ease-in-out infinite;
+    }
+    #page-home #heroTelegramBtn::after { animation-delay:2.7s; }
+    #page-home #heroShopBtn:hover, #page-home #heroTelegramBtn:hover {
+      transform:translateY(-4px) scale(1.025); box-shadow:0 12px 32px rgba(255,190,35,.16);
+    }
+    #page-home > div:not(:first-child) { animation:nkhFadeUp .7s both; }
+    #page-home > div:nth-child(2) { animation-delay:.08s; }
+    #page-home > div:nth-child(3) { animation-delay:.16s; }
+    #page-home > div:nth-child(4) { animation-delay:.24s; }
+    #page-home .grid > div { transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+    #page-home .grid > div:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(255,190,35,.08); }
+    @keyframes nkhGradientDrift { 0%{background-position:0% 35%} 100%{background-position:100% 65%} }
+    @keyframes nkhLightSweep { 0%,35%{background-position:center,150% 0} 70%,100%{background-position:center,-100% 0} }
+    @keyframes nkhSparkleRise { 0%{transform:translate3d(0,0,0) scale(.5);opacity:0} 12%{opacity:.8} 80%{opacity:.45} 100%{transform:translate3d(var(--drift),-360px,0) scale(1.25);opacity:0} }
+    @keyframes nkhLogoFloat { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-7px) rotate(1.5deg)} }
+    @keyframes nkhRingPulse { 0%{transform:scale(.94);opacity:.7} 85%,100%{transform:scale(1.12);opacity:0} }
+    @keyframes nkhHeadlineEnter { from{opacity:0;transform:translateY(16px);filter:blur(4px)} to{opacity:1;transform:translateY(0);filter:blur(0)} }
+    @keyframes nkhFadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes nkhButtonShine { 0%,65%{left:-55%} 85%,100%{left:135%} }
+    @media (prefers-reduced-motion: reduce) {
+      #page-home .nkh-hero-animated, #page-home .nkh-sparkle, #page-home #heroLogoImage,
+      #page-home .nkh-logo-ring, #page-home #heroHeadline, #page-home #heroSubtitle,
+      #page-home #heroShopBtn::after, #page-home #heroTelegramBtn::after,
+      #page-home > div:not(:first-child) { animation:none !important; }
+      #page-home .grid > div, #page-home #heroShopBtn, #page-home #heroTelegramBtn { transition:none !important; }
+    }
+  </style>
+
+
+  <!-- NKH STORE FULL-PAGE ANIMATED GOLD BACKGROUND -->
+  <style id="nkh-full-background-animation">
+    body {
+      background-color: #08090d;
+      background-image:
+        radial-gradient(ellipse at 15% 20%, rgba(234,179,8,.15) 0%, transparent 38%),
+        radial-gradient(ellipse at 85% 32%, rgba(217,119,6,.11) 0%, transparent 34%),
+        radial-gradient(ellipse at 50% 90%, rgba(250,204,21,.085) 0%, transparent 42%),
+        radial-gradient(ellipse at 88% 82%, rgba(56,189,248,.13) 0%, transparent 36%),
+        radial-gradient(ellipse at 10% 48%, rgba(168,85,247,.13) 0%, transparent 38%),
+        linear-gradient(125deg, #08090d 0%, #111019 32%, #0b0c12 65%, #171108 100%);
+      background-size: 180% 180%, 170% 170%, 190% 190%, 180% 180%, 190% 190%, 300% 300%;
+      animation: nkhPageBackgroundFlow 24s ease-in-out infinite alternate;
+      background-attachment: fixed;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .5;
+      background:
+        radial-gradient(circle at 12% 75%, rgba(255,190,35,.12) 0 1px, transparent 2px),
+        radial-gradient(circle at 76% 18%, rgba(255,220,120,.15) 0 1px, transparent 2px),
+        radial-gradient(circle at 62% 62%, rgba(255,190,35,.10) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 34% 42%, rgba(255,220,120,.12) 0 1px, transparent 2px),
+        radial-gradient(circle at 48% 18%, rgba(56,189,248,.24) 0 1px, transparent 2.5px),
+        radial-gradient(circle at 90% 60%, rgba(192,132,252,.22) 0 1px, transparent 2.5px);
+      background-size: 220px 240px, 280px 300px, 190px 210px, 320px 270px, 260px 280px, 300px 250px;
+      animation: nkhBackgroundStars 32s linear infinite;
+    }
+    @keyframes nkhPageBackgroundFlow {
+      0% { background-position: 0% 0%, 100% 10%, 40% 100%, 100% 100%, 0% 40%, 0% 50%; }
+      50% { background-position: 55% 35%, 20% 70%, 80% 25%, 30% 20%, 70% 80%, 100% 50%; }
+      100% { background-position: 100% 70%, 0% 100%, 20% 0%, 0% 0%, 100% 20%, 0% 50%; }
+    }
+    @keyframes nkhBackgroundStars {
+      0% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(10px,-18px,0); }
+      100% { transform: translate3d(-8px,-36px,0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body, body::before { animation: none !important; }
+    }
+  </style>
+
+
+  <!-- NKH STORE SMOOTH MOTION POLISH -->
+  <style id="nkh-smooth-motion-polish">
+    /* Slower, softer movement for the multicolor background */
+    body {
+      animation: nkhPageBackgroundFlow 42s cubic-bezier(.45,0,.55,1) infinite alternate !important;
+      background-attachment: fixed;
+      will-change: background-position;
+    }
+    body::before {
+      animation: nkhBackgroundStars 58s linear infinite !important;
+      will-change: transform;
+    }
+    body::after {
+      animation: nkhAuroraTurn 100s linear infinite !important;
+      will-change: transform;
+    }
+    /* Make home-page motion feel less abrupt */
+    #page-home .nkh-hero-animated {
+      animation-duration: 24s !important;
+      animation-timing-function: cubic-bezier(.45,0,.55,1) !important;
+    }
+    #page-home .nkh-hero-animated::before {
+      animation-duration: 15s !important;
+      animation-timing-function: cubic-bezier(.45,0,.55,1) !important;
+    }
+    #page-home .nkh-sparkle { animation-timing-function: ease-in-out !important; }
+    #page-home #heroLogoImage { animation-duration: 6.5s !important; }
+    #page-home .nkh-logo-ring { animation-duration: 4.5s !important; }
+    #page-home #heroShopBtn, #page-home #heroTelegramBtn,
+    #page-home .grid > div {
+      transition-duration: .45s !important;
+      transition-timing-function: cubic-bezier(.22,1,.36,1) !important;
+    }
+    #page-home #heroShopBtn::after, #page-home #heroTelegramBtn::after {
+      animation-duration: 7s !important;
+      animation-timing-function: ease-in-out !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body, body::before, body::after,
+      #page-home .nkh-hero-animated, #page-home .nkh-hero-animated::before,
+      #page-home .nkh-sparkle, #page-home #heroLogoImage, #page-home .nkh-logo-ring,
+      #page-home #heroShopBtn::after, #page-home #heroTelegramBtn::after,
+      #page-home > div:not(:first-child) { animation: none !important; }
+      #page-home .grid > div, #page-home #heroShopBtn, #page-home #heroTelegramBtn {
+        transition: none !important;
+      }
+    }
+  </style>
+
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-yellow-500 selection:text-black">
+
+  <!-- TOP HEADER NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-dark-800/90 backdrop-blur-md border-b border-yellow-500/20 px-4 py-3 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- LOGO AREA (Secret 7-Click Admin Trigger) -->
+      <div id="logoTrigger" class="flex items-center gap-3 cursor-pointer select-none group" onclick="handleLogoClick()">
+        <div class="relative">
+          <img id="siteHeaderLogo" src="https://placehold.co/100x100/12131a/ffb300?text=NKH" alt="NKH Store Logo" class="w-10 h-10 rounded-full border-2 border-yellow-500/60 object-cover group-hover:scale-105 transition-transform duration-300 shadow-md">
+          <div class="absolute -bottom-1 -right-1 bg-sky-500 text-white w-4 h-4 rounded-full flex items-center justify-center border-2 border-dark-800 shadow-md" aria-label="Verified"><i class="fa-solid fa-check text-[8px]"></i></div>
+        </div>
+        <div>
+          <span id="siteHeaderTitle" class="text-lg font-extrabold text-gold-gradient tracking-wide block leading-tight">NKH STORE</span>
+          <span id="siteHeaderSubtitle" class="text-[10px] text-gray-400 font-medium tracking-wider uppercase block">PREMIUM MOBILE & Accessories Pre order</span>
+        </div>
+      </div>
+
+      <!-- NAV NAVIGATION LINKS -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-300">
+        <button onclick="switchPage('home')" id="navHomeLink" class="hover:text-yellow-400 transition-colors">Home</button>
+        <button onclick="switchPage('shop')" id="navShopLink" class="hover:text-yellow-400 transition-colors">Shop Catalog</button>
+        <button onclick="switchPage('preorder')" id="navPreorderLink" class="hover:text-yellow-400 transition-colors">Pre-Order</button>
+        <a id="navChannelLink" href="https://t.me/NKHSTORE1" target="_blank" class="hover:text-yellow-400 transition-colors flex items-center gap-1.5 text-yellow-400/90">
+          <i class="fa-brands fa-telegram"></i> Telegram Channel
+        </a>
+      </nav>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex items-center gap-3">
+        <!-- Direct Call Button -->
+        <a id="headerCallBtn" href="tel:+85577817387" class="bg-dark-700 hover:bg-dark-600 text-yellow-400 border border-yellow-500/30 p-2.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all shadow-sm">
+          <i class="fa-solid fa-phone text-yellow-400 animate-pulse"></i>
+          <span class="hidden sm:inline" id="headerCallBtnText">Call Us</span>
+        </a>
+
+        <!-- Cart Trigger Button -->
+        <button onclick="toggleCartDrawer()" class="relative bg-gold-gradient bg-gold-gradient-hover text-black p-2.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-extrabold flex items-center gap-2 transition-all shadow-lg shadow-yellow-500/20">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="hidden sm:inline">Cart</span>
+          <span id="cartBadgeCount" class="bg-black text-yellow-400 text-xs px-2 py-0.5 rounded-full font-black">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE NAVIGATION BOTTOM BAR BAR -->
+    <div class="md:hidden flex items-center justify-around bg-dark-900/90 border-t border-yellow-500/10 mt-2 pt-2 text-xs font-medium text-gray-400">
+      <button onclick="switchPage('home')" id="mobileNavHome" class="flex flex-col items-center gap-1 text-yellow-400">
+        <i class="fa-solid fa-house text-base"></i>
+        <span id="mobileNavHomeLabel">Home</span>
+      </button>
+      <button onclick="switchPage('shop')" id="mobileNavShop" class="flex flex-col items-center gap-1">
+        <i class="fa-solid fa-store text-base"></i>
+        <span id="mobileNavShopLabel">Shop</span>
+      </button>
+      <button onclick="switchPage('preorder')" id="mobileNavPreorder" class="flex flex-col items-center gap-1">
+        <i class="fa-solid fa-clock text-base"></i>
+        <span id="mobileNavPreorderLabel">Pre-Order</span>
+      </button>
+      <a id="mobileNavChannelLink" href="https://t.me/NKHSTORE1" target="_blank" class="flex flex-col items-center gap-1 text-sky-400">
+        <i class="fa-brands fa-telegram text-base"></i>
+        <span id="mobileNavChannelLabel">Channel</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 md:p-8">
+
+    <!-- ================================================================= -->
+    <!-- PAGE 1: INTERFACE / HOME PAGE                                     -->
+    <!-- ================================================================= -->
+    <section id="page-home" class="space-y-12">
+      
+      <!-- HERO SECTION -->
+      <div class="relative bg-gradient-to-b from-dark-800 to-dark-900 border border-yellow-500/20 rounded-3xl p-6 sm:p-10 md:p-12 text-center overflow-hidden animate-pulse-glow">
+        <div class="absolute -top-24 -left-24 w-60 h-60 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-60 h-60 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+          <!-- Animated Logo Emblem -->
+          <div class="inline-block relative">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-dark-700 p-1 border-2 border-yellow-500/80 shadow-2xl shadow-yellow-500/30 flex items-center justify-center overflow-hidden">
+              <img id="heroLogoImage" src="https://placehold.co/150x150/12131a/ffb300?text=NKH" alt="NKH Emblem" class="w-full h-full object-cover rounded-full">
+            </div>
+            <div class="absolute bottom-0 right-1/4 translate-x-1/2 bg-gold-gradient text-black w-6 h-6 rounded-full flex items-center justify-center border-2 border-dark-800 shadow-md" aria-label="Verified"><i class="fa-solid fa-check text-xs"></i></div>
+          </div>
+
+          <!-- Hero Headlines -->
+          <h1 id="heroHeadline" class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
+            Your next phone <span class="text-gold-gradient">starts here.</span>
+          </h1>
+          <p id="heroSubtitle" class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            Cambodia's trusted destination for authentic smartphones, high-grade cases, premium accessories, and hassle-free device pre-orders.
+          </p>
+
+          <!-- Hero Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <button onclick="switchPage('shop')" id="heroShopBtn" class="w-full sm:w-auto px-8 py-3.5 bg-gold-gradient bg-gold-gradient-hover text-black font-extrabold rounded-xl shadow-xl shadow-yellow-500/20 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span id="heroShopBtnText">Shop Now</span>
+            </button>
+            <a id="heroTelegramBtn" href="https://t.me/Hokgod12" target="_blank" class="w-full sm:w-auto px-8 py-3.5 bg-dark-700 hover:bg-dark-600 text-yellow-400 border border-yellow-500/40 font-bold rounded-xl flex items-center justify-center gap-2 transition-all">
+              <i class="fa-brands fa-telegram text-lg text-sky-400"></i>
+              <span id="heroTelegramBtnText">Chat on Telegram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE FEATURE HIGHLIGHT CARDS -->
+      <div>
+        <h2 id="featureSectionTitle" class="text-xl sm:text-2xl font-extrabold text-white text-center mb-2">Why Choose NKH Store?</h2>
+        <p id="featureSectionSubtitle" class="text-xs sm:text-sm text-gray-400 text-center mb-8">Unmatched quality, guaranteed authenticity, and direct fast support</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Feature 1 -->
+          <div class="bg-dark-800/80 border border-yellow-500/15 p-5 rounded-2xl space-y-3 hover:border-yellow-500/40 transition-all">
+            <div class="w-12 h-12 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-xl font-bold">
+              <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+            <h3 id="feat1Title" class="text-base font-bold text-white">New & Used Phones</h3>
+            <p id="feat1Desc" class="text-xs text-gray-400 leading-relaxed">Factory original 100% brand new or pristine 99% condition phones thoroughly inspected.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="bg-dark-800/80 border border-yellow-500/15 p-5 rounded-2xl space-y-3 hover:border-yellow-500/40 transition-all">
+            <div class="w-12 h-12 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-xl font-bold">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 id="feat2Title" class="text-base font-bold text-white">Trusted & Safe</h3>
+            <p id="feat2Desc" class="text-xs text-gray-400 leading-relaxed">100% authentic guarantee with full warranty backup and direct customer care.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="bg-dark-800/80 border border-yellow-500/15 p-5 rounded-2xl space-y-3 hover:border-yellow-500/40 transition-all">
+            <div class="w-12 h-12 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-xl font-bold">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <h3 id="feat3Title" class="text-base font-bold text-white">Fast Delivery</h3>
+            <p id="feat3Desc" class="text-xs text-gray-400 leading-relaxed">Swift nationwide shipping across Phnom Penh and all provinces in Cambodia.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="bg-dark-800/80 border border-yellow-500/15 p-5 rounded-2xl space-y-3 hover:border-yellow-500/40 transition-all">
+            <div class="w-12 h-12 bg-yellow-500/10 text-yellow-400 rounded-xl flex items-center justify-center text-xl font-bold">
+              <i class="fa-solid fa-business-time"></i>
+            </div>
+            <h3 id="feat4Title" class="text-base font-bold text-white">Pre-Order Available</h3>
+            <p id="feat4Desc" class="text-xs text-gray-400 leading-relaxed">Reserve upcoming flagship devices or rare storage specs with instant priority setup.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STORE CONTACT & TELEGRAM CARD -->
+      <div class="bg-gradient-to-r from-dark-800 via-dark-700 to-dark-800 border border-yellow-500/30 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="text-xs font-extrabold uppercase text-yellow-400 tracking-wider">Direct Assistance</span>
+          <h3 id="contactCardHeading" class="text-xl sm:text-2xl font-black text-white">Need Quick Advice or Special Pricing?</h3>
+          <p id="contactCardDesc" class="text-xs sm:text-sm text-gray-300">Call our direct line or text our primary Telegram manager for fast response.</p>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-3 w-full md:w-auto">
+          <a id="contactCardCallBtn" href="tel:+85577817387" class="px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-extrabold rounded-xl flex items-center justify-center gap-2 text-sm shadow-md transition-all">
+            <i class="fa-solid fa-phone"></i>
+            <span id="contactCardCallText">Call Store Now</span>
+          </a>
+          <a id="contactCardTelegramBtn" href="https://t.me/Hokgod12" target="_blank" class="px-6 py-3 bg-dark-900 border border-yellow-500/40 text-yellow-400 font-bold rounded-xl flex items-center justify-center gap-2 text-sm hover:bg-dark-800 transition-all">
+            <i class="fa-brands fa-telegram text-sky-400 text-base"></i>
+            <span id="contactCardTelegramText">Telegram Admin</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- PAGE 2: SHOP CATALOG                                             -->
+    <!-- ================================================================= -->
+    <section id="page-shop" class="space-y-8 hidden">
+      
+      <!-- Catalog Header -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-yellow-500/20 pb-6">
+        <div>
+          <h1 id="shopTitle" class="text-2xl sm:text-3xl font-black text-white">Shop Tech Catalog</h1>
+          <p id="shopSubtitle" class="text-xs sm:text-sm text-gray-400">Browse original devices, protective cases & gadgets</p>
+        </div>
+
+        <!-- SEARCH BAR -->
+        <div class="relative w-full md:w-72">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+          <input type="text" id="searchInput" oninput="renderProducts()" placeholder="Search iPhone, iPad, Case..." class="w-full bg-dark-800 border border-yellow-500/20 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 transition-colors">
+        </div>
+      </div>
+
+      <!-- CATEGORY FILTER TABS -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar text-xs sm:text-sm font-semibold">
+        <button onclick="setCategoryFilter('all')" id="catTab-all" class="cat-tab px-4 py-2 rounded-xl bg-gold-gradient text-black font-extrabold whitespace-nowrap shadow-md">All Items</button>
+        <button onclick="setCategoryFilter('phones')" id="catTab-phones" class="cat-tab px-4 py-2 rounded-xl bg-dark-800 text-gray-300 border border-yellow-500/20 hover:text-yellow-400 whitespace-nowrap">Phones</button>
+        <button onclick="setCategoryFilter('cases')" id="catTab-cases" class="cat-tab px-4 py-2 rounded-xl bg-dark-800 text-gray-300 border border-yellow-500/20 hover:text-yellow-400 whitespace-nowrap">Phone Cases</button>
+        <button onclick="setCategoryFilter('accessories')" id="catTab-accessories" class="cat-tab px-4 py-2 rounded-xl bg-dark-800 text-gray-300 border border-yellow-500/20 hover:text-yellow-400 whitespace-nowrap">Accessories</button>
+        <button onclick="setCategoryFilter('preorder')" id="catTab-preorder" class="cat-tab px-4 py-2 rounded-xl bg-dark-800 text-gray-300 border border-yellow-500/20 hover:text-yellow-400 whitespace-nowrap">Pre-Order Devices</button>
+      </div>
+
+      <!-- PRODUCTS GRID -->
+      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- PAGE 3: PRE-ORDER BOOKING & DETAILS                               -->
+    <!-- ================================================================= -->
+    <section id="page-preorder" class="space-y-8 hidden">
+      
+      <div class="max-w-3xl mx-auto space-y-6">
+        <!-- Preorder Header -->
+        <div class="text-center space-y-2">
+          <span class="bg-yellow-500/10 text-yellow-400 text-xs font-extrabold px-3 py-1 rounded-full border border-yellow-500/30 uppercase tracking-widest">VIP Pre-Order Queue</span>
+          <h1 id="preorderTitle" class="text-3xl sm:text-4xl font-black text-white">Reserve Your Next Device</h1>
+          <p id="preorderSubtitle" class="text-xs sm:text-sm text-gray-400 max-w-lg mx-auto">Lock in rare colors, custom storage capacities, or brand new releases before stock arrives.</p>
+        </div>
+
+        <!-- Preorder Form Card -->
+        <div class="bg-dark-800 border border-yellow-500/30 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl">
+          <form id="preorderForm" onsubmit="handlePreorderSubmit(event)" class="space-y-5">
+            
+            <!-- Model -->
+            <div id="fieldGroup-model">
+              <label id="lbl-model" class="block text-xs font-extrabold uppercase text-gray-300 mb-2">Device Model *</label>
+              <input type="text" id="preorderModel" required placeholder="e.g. iPhone 16 Pro Max / iPad Pro M4" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Storage -->
+              <div id="fieldGroup-storage">
+                <label id="lbl-storage" class="block text-xs font-extrabold uppercase text-gray-300 mb-2">Storage Capacity *</label>
+                <select id="preorderStorage" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500">
+                  <option value="128GB">128 GB</option>
+                  <option value="256GB" selected>256 GB</option>
+                  <option value="512GB">512 GB</option>
+                  <option value="1TB">1 TB</option>
+                </select>
+              </div>
+
+              <!-- Color Choice -->
+              <div id="fieldGroup-color">
+                <label id="lbl-color" class="block text-xs font-extrabold uppercase text-gray-300 mb-2">Preferred Color *</label>
+                <input type="text" id="preorderColor" required placeholder="e.g. Natural Titanium / Desert Gold" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Customer Name -->
+              <div id="fieldGroup-name">
+                <label id="lbl-name" class="block text-xs font-extrabold uppercase text-gray-300 mb-2">Your Name *</label>
+                <input type="text" id="preorderName" required placeholder="Enter full name" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500">
+              </div>
+
+              <!-- Customer Phone -->
+              <div id="fieldGroup-phone">
+                <label id="lbl-phone" class="block text-xs font-extrabold uppercase text-gray-300 mb-2">Phone Number *</label>
+                <input type="tel" id="preorderPhone" required placeholder="012 345 678" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500">
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div>
+              <label id="lbl-notes" class="block text-xs font-extrabold uppercase text-gray-300 mb-2">Special Notes / Requirements (Optional)</label>
+              <textarea id="preorderNotes" rows="3" placeholder="Specify if you need sealing, specific region code, accessories included..." class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl p-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500"></textarea>
+            </div>
+
+            <!-- Notice Box -->
+            <div id="preorderNoticeBox" class="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-xl text-xs text-yellow-300 flex items-start gap-3">
+              <i class="fa-solid fa-circle-info text-yellow-400 text-base shrink-0 mt-0.5"></i>
+              <span id="preorderNoticeText">After clicking submit, your reservation order will be automatically formatted and sent directly to our Telegram manager (@Hokgod12) to confirm stock and deposit instructions.</span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="preorderSubmitBtn" class="w-full py-4 bg-gold-gradient bg-gold-gradient-hover text-black font-extrabold text-base rounded-xl shadow-xl shadow-yellow-500/20 flex items-center justify-center gap-2 transition-all">
+              <i class="fa-brands fa-telegram text-lg"></i>
+              <span id="preorderSubmitBtnText">Submit Pre-Order via Telegram</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-900 border-t border-yellow-500/15 py-8 px-4 text-center text-xs text-gray-500 mt-12">
+    <div class="max-w-7xl mx-auto space-y-4">
+      <div class="flex justify-center items-center gap-6 font-semibold text-gray-400">
+        <button onclick="switchPage('home')" id="footerHomeLink" class="hover:text-yellow-400">Home</button>
+        <button onclick="switchPage('shop')" id="footerShopLink" class="hover:text-yellow-400">Catalog</button>
+        <button onclick="switchPage('preorder')" id="footerPreorderLink" class="hover:text-yellow-400">Pre-Order</button>
+        <a id="footerTelegramLink" href="https://t.me/Hokgod12" target="_blank" class="hover:text-yellow-400">Contact Admin</a>
+      </div>
+      <p id="footerCopyrightText">© 2026 NKH Store. All Rights Reserved. Dark Gold Edition.</p>
+    </div>
+  </footer>
+
+
+  <!-- ================================================================= -->
+  <!-- CART SLIDE-OUT DRAWER                                             -->
+  <!-- ================================================================= -->
+  <div id="cartDrawerBackdrop" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  
+  <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-dark-800 border-l border-yellow-500/20 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between shadow-2xl">
+    
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-yellow-500/20 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-cart-shopping text-yellow-400"></i>
+        <h2 id="cartHeaderTitle" class="text-lg font-extrabold text-white">Your Shopping Cart</h2>
+      </div>
+      <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white p-2">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+
+    <!-- Cart Items List -->
+    <div id="cartItemsContainer" class="flex-grow p-5 space-y-4 overflow-y-auto">
+      <!-- Dynamic cart items rendered here -->
+    </div>
+
+    <!-- Drawer Footer / Summary -->
+    <div class="p-5 border-t border-yellow-500/20 bg-dark-900 space-y-4">
+      <div class="flex items-center justify-between text-sm font-bold">
+        <span class="text-gray-400">Total Amount:</span>
+        <span id="cartTotalPrice" class="text-xl font-black text-gold-gradient">$0.00</span>
+      </div>
+
+      <p id="cartCheckoutWarning" class="text-[11px] text-gray-400 text-center">Orders are finalized & confirmed instantly with NKH Store Telegram Admin.</p>
+
+      <button onclick="checkoutViaTelegram()" id="cartCheckoutBtn" class="w-full py-3.5 bg-gold-gradient bg-gold-gradient-hover text-black font-extrabold rounded-xl shadow-lg flex items-center justify-center gap-2 text-sm transition-all">
+        <i class="fa-brands fa-telegram text-base"></i>
+        <span id="cartCheckoutBtnText">Pay via Telegram</span>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ================================================================= -->
+  <!-- 2-STEP ADMIN AUTH MODAL (TRIGGERED BY 7 CLICKS ON LOGO)            -->
+  <!-- ================================================================= -->
+  <div id="adminAuthModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-dark-800 border-2 border-yellow-500/50 rounded-3xl p-6 sm:p-8 max-w-md w-full space-y-6 shadow-2xl relative">
+      
+      <button onclick="closeAdminAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="text-center space-y-2">
+        <div class="w-14 h-14 bg-yellow-500/10 text-yellow-400 rounded-2xl mx-auto flex items-center justify-center text-2xl border border-yellow-500/30">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h3 class="text-xl font-black text-white">Owner Admin Security</h3>
+        <p class="text-xs text-gray-400">Enter two-step security passwords to unlock system controls.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-yellow-400 mb-1">Step 1 Password</label>
+          <input type="password" id="adminPass1" placeholder="Enter first password" class="w-full bg-dark-900 border border-yellow-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-yellow-400 mb-1">Step 2 Password</label>
+          <input type="password" id="adminPass2" placeholder="Enter second password" class="w-full bg-dark-900 border border-yellow-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-500">
+        </div>
+
+        <div id="adminAuthError" class="text-xs text-red-400 hidden text-center font-bold">Incorrect passwords. Please try again.</div>
+
+        <button onclick="verifyAdminAuth()" class="w-full py-3.5 bg-gold-gradient text-black font-extrabold rounded-xl shadow-lg hover:opacity-95 transition-opacity">
+          Unlock Admin Panel
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================================================================= -->
+  <!-- SUPER-EXTENDED ADMIN PANEL MODAL                                  -->
+  <!-- ================================================================= -->
+  <div id="adminPanelModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-dark-800 border-2 border-yellow-500/60 rounded-3xl max-w-5xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden my-auto">
+      
+      <!-- Panel Header -->
+      <div class="p-5 border-b border-yellow-500/20 bg-dark-900 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-yellow-500 text-black rounded-xl flex items-center justify-center font-black">
+            <i class="fa-solid fa-sliders text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-lg font-black text-white">NKH Master Admin Control</h2>
+            <p class="text-xs text-gray-400">Full site text, brand, contacts & product management</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <button onclick="resetFactoryDefaults()" class="px-3 py-1.5 bg-red-500/20 text-red-300 border border-red-500/40 rounded-xl text-xs font-bold hover:bg-red-500/30">
+            Reset Factory Defaults
+          </button>
+          <button onclick="closeAdminPanel()" class="text-gray-400 hover:text-white p-2">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Tab Selector -->
+      <div class="flex items-center gap-2 bg-dark-900/60 p-2 border-b border-yellow-500/15 overflow-x-auto text-xs font-bold shrink-0">
+        <button onclick="switchAdminTab('dashboard')" id="adminTabBtn-dashboard" class="admin-tab-btn px-4 py-2 rounded-xl bg-dark-700 text-gray-300 whitespace-nowrap">Dashboard</button>
+        <button onclick="switchAdminTab('orders')" id="adminTabBtn-orders" class="admin-tab-btn px-4 py-2 rounded-xl bg-dark-700 text-gray-300 whitespace-nowrap">Orders</button>
+        <button onclick="switchAdminTab('texts')" id="adminTabBtn-texts" class="admin-tab-btn px-4 py-2 rounded-xl bg-gold-gradient text-black whitespace-nowrap">Site Text & Headings</button>
+        <button onclick="switchAdminTab('brand')" id="adminTabBtn-brand" class="admin-tab-btn px-4 py-2 rounded-xl bg-dark-700 text-gray-300 whitespace-nowrap">Brand & Logo</button>
+        <button onclick="switchAdminTab('contacts')" id="adminTabBtn-contacts" class="admin-tab-btn px-4 py-2 rounded-xl bg-dark-700 text-gray-300 whitespace-nowrap">Contact & Links</button>
+        <button onclick="switchAdminTab('products')" id="adminTabBtn-products" class="admin-tab-btn px-4 py-2 rounded-xl bg-dark-700 text-gray-300 whitespace-nowrap">Product Catalog</button>
+        <button onclick="switchAdminTab('preorderFields')" id="adminTabBtn-preorderFields" class="admin-tab-btn px-4 py-2 rounded-xl bg-dark-700 text-gray-300 whitespace-nowrap">Pre-Order Form Settings</button>
+      </div>
+
+      <!-- Tab Contents Container -->
+      <div class="p-6 overflow-y-auto space-y-6 flex-grow text-xs sm:text-sm">
+
+        <!-- NEW: ADMIN DASHBOARD -->
+        <div id="adminTab-dashboard" class="space-y-6 hidden">
+          <div class="flex items-center justify-between border-b border-yellow-500/20 pb-3">
+            <div><h3 class="text-base font-extrabold text-yellow-400">Store Dashboard</h3><p class="text-xs text-gray-400 mt-1">A quick overview of this browser's saved store data.</p></div>
+            <button onclick="refreshAdminDashboard()" class="px-3 py-2 bg-yellow-500/15 border border-yellow-500/30 text-yellow-300 rounded-xl text-xs font-bold">Refresh</button>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            <div class="bg-dark-900 border border-yellow-500/20 rounded-2xl p-4"><p class="text-gray-400 text-xs">Products</p><p id="dashProducts" class="text-2xl font-black text-white mt-2">0</p></div>
+            <div class="bg-dark-900 border border-yellow-500/20 rounded-2xl p-4"><p class="text-gray-400 text-xs">Total Orders</p><p id="dashOrders" class="text-2xl font-black text-white mt-2">0</p></div>
+            <div class="bg-dark-900 border border-yellow-500/20 rounded-2xl p-4"><p class="text-gray-400 text-xs">Pending Orders</p><p id="dashPending" class="text-2xl font-black text-white mt-2">0</p></div>
+            <div class="bg-dark-900 border border-yellow-500/20 rounded-2xl p-4"><p class="text-gray-400 text-xs">Recorded Order Value</p><p id="dashValue" class="text-2xl font-black text-yellow-400 mt-2">$0.00</p></div>
+          </div>
+          <div class="bg-dark-900 border border-yellow-500/20 rounded-2xl p-4"><h4 class="font-bold text-white mb-2">Important note</h4><p class="text-xs text-gray-400 leading-5">This is a single-browser admin panel. Orders are recorded when someone submits checkout on this browser. It does not automatically receive orders from other customers' phones. Multi-device order syncing requires a secure online database/backend.</p></div>
+        </div>
+
+        <!-- NEW: ORDER MANAGEMENT -->
+        <div id="adminTab-orders" class="space-y-6 hidden">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-yellow-500/20 pb-3">
+            <div><h3 class="text-base font-extrabold text-yellow-400">Order Management</h3><p class="text-xs text-gray-400 mt-1">Review orders recorded by this browser and update their status.</p></div>
+            <div class="flex gap-2"><button onclick="exportAdminOrders()" class="px-3 py-2 bg-dark-700 border border-yellow-500/20 text-gray-200 rounded-xl text-xs font-bold">Export CSV</button><button onclick="clearAdminOrders()" class="px-3 py-2 bg-red-500/10 border border-red-500/30 text-red-300 rounded-xl text-xs font-bold">Clear Orders</button></div>
+          </div>
+          <input id="adminOrderSearch" oninput="renderAdminOrders()" placeholder="Search customer, phone, item, or order ID..." class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl p-3 text-white placeholder-gray-500">
+          <div id="adminOrdersList" class="space-y-3"><p class="text-gray-400">No orders recorded yet.</p></div>
+        </div>
+
+        <!-- TAB 1: SITE TEXT & HEADINGS EDITOR -->
+        <div id="adminTab-texts" class="space-y-6">
+          <h3 class="text-base font-extrabold text-yellow-400 border-b border-yellow-500/20 pb-2">Full Website Text Editor</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Header Section Text -->
+            <div class="p-4 bg-dark-900 border border-yellow-500/20 rounded-2xl space-y-3">
+              <h4 class="font-bold text-white text-sm text-yellow-400">Header & Nav Labels</h4>
+              <div>
+                <label class="block text-gray-400 mb-1">Store Header Name</label>
+                <input type="text" id="edit_siteHeaderTitle" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+              </div>
+              <div>
+                <label class="block text-gray-400 mb-1">Header Subtitle</label>
+                <input type="text" id="edit_siteHeaderSubtitle" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+              </div>
+              <div>
+                <label class="block text-gray-400 mb-1">Call Us Button Text</label>
+                <input type="text" id="edit_headerCallBtnText" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+              </div>
+            </div>
+
+            <!-- Hero Section Text -->
+            <div class="p-4 bg-dark-900 border border-yellow-500/20 rounded-2xl space-y-3">
+              <h4 class="font-bold text-white text-sm text-yellow-400">Hero Section Content</h4>
+              <div>
+                <label class="block text-gray-400 mb-1">Main Headline</label>
+                <input type="text" id="edit_heroHeadline" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+              </div>
+              <div>
+                <label class="block text-gray-400 mb-1">Hero Subtitle</label>
+                <textarea id="edit_heroSubtitle" rows="2" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white"></textarea>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="block text-gray-400 mb-1">Shop Button</label>
+                  <input type="text" id="edit_heroShopBtnText" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+                </div>
+                <div>
+                  <label class="block text-gray-400 mb-1">Telegram Button</label>
+                  <input type="text" id="edit_heroTelegramBtnText" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+                </div>
+              </div>
+            </div>
+
+            <!-- Features Cards Text -->
+            <div class="p-4 bg-dark-900 border border-yellow-500/20 rounded-2xl space-y-3 md:col-span-2">
+              <h4 class="font-bold text-white text-sm text-yellow-400">Features Section Headings</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-gray-400 mb-1">Feature 1 Title & Description</label>
+                  <input type="text" id="edit_feat1Title" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white mb-1">
+                  <input type="text" id="edit_feat1Desc" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white text-xs">
+                </div>
+                <div>
+                  <label class="block text-gray-400 mb-1">Feature 2 Title & Description</label>
+                  <input type="text" id="edit_feat2Title" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white mb-1">
+                  <input type="text" id="edit_feat2Desc" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white text-xs">
+                </div>
+                <div>
+                  <label class="block text-gray-400 mb-1">Feature 3 Title & Description</label>
+                  <input type="text" id="edit_feat3Title" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white mb-1">
+                  <input type="text" id="edit_feat3Desc" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white text-xs">
+                </div>
+                <div>
+                  <label class="block text-gray-400 mb-1">Feature 4 Title & Description</label>
+                  <input type="text" id="edit_feat4Title" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white mb-1">
+                  <input type="text" id="edit_feat4Desc" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white text-xs">
+                </div>
+              </div>
+            </div>
+
+            <!-- Pre-Order Section Text -->
+            <div class="p-4 bg-dark-900 border border-yellow-500/20 rounded-2xl space-y-3 md:col-span-2">
+              <h4 class="font-bold text-white text-sm text-yellow-400">Pre-Order Section Words & Notices</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-gray-400 mb-1">Pre-Order Title</label>
+                  <input type="text" id="edit_preorderTitle" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+                </div>
+                <div>
+                  <label class="block text-gray-400 mb-1">Submit Button Text</label>
+                  <input type="text" id="edit_preorderSubmitBtnText" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+                </div>
+              </div>
+              <div>
+                <label class="block text-gray-400 mb-1">Pre-Order Subtitle</label>
+                <input type="text" id="edit_preorderSubtitle" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+              </div>
+              <div>
+                <label class="block text-gray-400 mb-1">Helper Notice Message</label>
+                <textarea id="edit_preorderNoticeText" rows="2" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white"></textarea>
+              </div>
+            </div>
+
+            <!-- Cart Section Words -->
+            <div class="p-4 bg-dark-900 border border-yellow-500/20 rounded-2xl space-y-3 md:col-span-2">
+              <h4 class="font-bold text-white text-sm text-yellow-400">Cart Drawer Words</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-gray-400 mb-1">Cart Title</label>
+                  <input type="text" id="edit_cartHeaderTitle" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+                </div>
+                <div>
+                  <label class="block text-gray-400 mb-1">Checkout Button Label</label>
+                  <input type="text" id="edit_cartCheckoutBtnText" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+                </div>
+              </div>
+              <div>
+                <label class="block text-gray-400 mb-1">Checkout Notice Message</label>
+                <input type="text" id="edit_cartCheckoutWarning" class="w-full bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-white">
+              </div>
+            </div>
+
+          </div>
+
+          <button onclick="saveAdminTexts()" class="w-full py-3 bg-gold-gradient text-black font-extrabold rounded-xl shadow-lg">Save Content & Text Changes</button>
+        </div>
+
+
+        <!-- TAB 2: BRAND & LOGO SETTINGS -->
+        <div id="adminTab-brand" class="space-y-6 hidden">
+          <h3 class="text-base font-extrabold text-yellow-400 border-b border-yellow-500/20 pb-2">Brand & Logo Customization</h3>
+
+          <div class="p-5 bg-dark-900 border border-yellow-500/20 rounded-2xl space-y-4">
+            <div>
+              <label class="block text-gray-300 font-bold mb-1">Store Logo Image URL</label>
+              <input type="text" id="edit_logoUrl" class="w-full bg-dark-800 border border-yellow-500/20 rounded-xl p-3 text-white" placeholder="https://example.com/logo.png">
+              <p class="text-[11px] text-gray-500 mt-1">Changes image across Header, Hero emblem, and Auth modal.</p>
+            </div>
+
+            <div>
+              <label class="block text-gray-300 font-bold mb-1">Store Slogan</label>
+              <input type="text" id="edit_storeSlogan" class="w-full bg-dark-800 border border-yellow-500/20 rounded-xl p-3 text-white" placeholder="Cambodia's Mobile Authority">
+            </div>
+
+            <div>
+              <label class="block text-gray-300 font-bold mb-2">Primary Accent Palette Preview</label>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-yellow-500 border-2 border-white"></div>
+                <span class="text-gray-300 font-semibold">Dark Gold Luxury Edition (Active)</span>
+              </div>
+            </div>
+
+            <button onclick="saveBrandSettings()" class="w-full py-3 bg-gold-gradient text-black font-extrabold rounded-xl shadow-lg">Save Brand Settings</button>
+          </div>
+        </div>
+
+
+        <!-- TAB 3: CONTACT & SOCIAL LINKS -->
+        <div id="adminTab-contacts" class="space-y-6 hidden">
+          <h3 class="text-base font-extrabold text-yellow-400 border-b border-yellow-500/20 pb-2">Contact & Telegram Links</h3>
+
+          <div class="p-5 bg-dark-900 border border-yellow-500/20 rounded-2xl space-y-4">
+            <div>
+              <label class="block text-gray-300 font-bold mb-1">Active Store Phone Number</label>
+              <input type="text" id="edit_phoneNum" class="w-full bg-dark-800 border border-yellow-500/20 rounded-xl p-3 text-white" placeholder="+85577817387">
+            </div>
+
+            <div>
+              <label class="block text-gray-300 font-bold mb-1">Telegram Admin Username / Direct Link</label>
+              <input type="text" id="edit_telegramAdmin" class="w-full bg-dark-800 border border-yellow-500/20 rounded-xl p-3 text-white" placeholder="https://t.me/Hokgod12">
+            </div>
+
+            <div>
+              <label class="block text-gray-300 font-bold mb-1">Telegram Public Channel Link</label>
+              <input type="text" id="edit_telegramChannel" class="w-full bg-dark-800 border border-yellow-500/20 rounded-xl p-3 text-white" placeholder="https://t.me/NKHSTORE1">
+            </div>
+
+            <button onclick="saveContactSettings()" class="w-full py-3 bg-gold-gradient text-black font-extrabold rounded-xl shadow-lg">Save Contact Links</button>
+          </div>
+        </div>
+
+
+        <!-- TAB 4: PRODUCT CATALOG MANAGER -->
+        <div id="adminTab-products" class="space-y-6 hidden">
+          <div class="flex items-center justify-between border-b border-yellow-500/20 pb-2">
+            <h3 class="text-base font-extrabold text-yellow-400">Product & Catalog Manager</h3>
+            <button onclick="openAddProductModal()" class="px-4 py-2 bg-gold-gradient text-black font-extrabold rounded-xl text-xs">+ Add New Product</button>
+          </div>
+
+          <!-- Live Product List for Admin Editing -->
+          <div id="adminProductList" class="space-y-3">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+
+        <!-- TAB 5: PRE-ORDER FORM FIELDS CUSTOMIZER -->
+        <div id="adminTab-preorderFields" class="space-y-6 hidden">
+          <h3 class="text-base font-extrabold text-yellow-400 border-b border-yellow-500/20 pb-2">Pre-Order Form Customizer</h3>
+
+          <div class="p-5 bg-dark-900 border border-yellow-500/20 rounded-2xl space-y-4">
+            <p class="text-xs text-gray-400">Customize input field labels or toggle their required status for the Pre-Order reservation form.</p>
+
+            <div class="space-y-3">
+              <div class="flex items-center justify-between bg-dark-800 p-3 rounded-xl border border-yellow-500/10">
+                <span class="font-bold text-white">Device Model Field</span>
+                <input type="text" id="edit_lbl_model" class="bg-dark-900 border border-yellow-500/20 rounded-lg p-2 text-white text-xs w-1/2">
+              </div>
+
+              <div class="flex items-center justify-between bg-dark-800 p-3 rounded-xl border border-yellow-500/10">
+                <span class="font-bold text-white">Storage Field</span>
+                <input type="text" id="edit_lbl_storage" class="bg-dark-900 border border-yellow-500/20 rounded-lg p-2 text-white text-xs w-1/2">
+              </div>
+
+              <div class="flex items-center justify-between bg-dark-800 p-3 rounded-xl border border-yellow-500/10">
+                <span class="font-bold text-white">Color Field</span>
+                <input type="text" id="edit_lbl_color" class="bg-dark-900 border border-yellow-500/20 rounded-lg p-2 text-white text-xs w-1/2">
+              </div>
+
+              <div class="flex items-center justify-between bg-dark-800 p-3 rounded-xl border border-yellow-500/10">
+                <span class="font-bold text-white">Customer Name Field</span>
+                <input type="text" id="edit_lbl_name" class="bg-dark-900 border border-yellow-500/20 rounded-lg p-2 text-white text-xs w-1/2">
+              </div>
+
+              <div class="flex items-center justify-between bg-dark-800 p-3 rounded-xl border border-yellow-500/10">
+                <span class="font-bold text-white">Phone Number Field</span>
+                <input type="text" id="edit_lbl_phone" class="bg-dark-900 border border-yellow-500/20 rounded-lg p-2 text-white text-xs w-1/2">
+              </div>
+            </div>
+
+            <button onclick="savePreorderFormSettings()" class="w-full py-3 bg-gold-gradient text-black font-extrabold rounded-xl shadow-lg">Save Pre-Order Form Settings</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================================================================= -->
+  <!-- MODAL: ADD / EDIT PRODUCT                                          -->
+  <!-- ================================================================= -->
+  <div id="productEditModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-dark-800 border-2 border-yellow-500/50 rounded-3xl p-6 max-w-lg w-full space-y-4 shadow-2xl relative">
+      
+      <button onclick="closeProductEditModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <h3 id="productModalTitle" class="text-xl font-black text-white">Add New Product</h3>
+
+      <div class="space-y-3 text-xs">
+        <input type="hidden" id="prodEdit_id">
+        
+        <div>
+          <label class="block text-gray-300 font-bold mb-1">Product Title</label>
+          <input type="text" id="prodEdit_title" placeholder="iPhone 16 Pro Max" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl p-2.5 text-white">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-gray-300 font-bold mb-1">Price ($ USD)</label>
+            <input type="number" step="0.01" id="prodEdit_price" placeholder="1299.00" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl p-2.5 text-white">
+          </div>
+          <div>
+            <label class="block text-gray-300 font-bold mb-1">Category</label>
+            <select id="prodEdit_category" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl p-2.5 text-white">
+              <option value="phones">Phones</option>
+              <option value="cases">Phone Cases</option>
+              <option value="accessories">Accessories</option>
+              <option value="preorder">Pre-Order Devices</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-gray-300 font-bold mb-1">Condition Tag</label>
+            <input type="text" id="prodEdit_condition" placeholder="Brand New 100% / 99%" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl p-2.5 text-white">
+          </div>
+          <div>
+            <label class="block text-gray-300 font-bold mb-1">Colors (Comma separated)</label>
+            <input type="text" id="prodEdit_colors" placeholder="Desert Gold, Titanium, Black" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl p-2.5 text-white">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-gray-300 font-bold mb-1">Stock Quantity</label>
+            <input type="number" min="0" step="1" id="prodEdit_stock" placeholder="10" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl p-2.5 text-white">
+          </div>
+          <div>
+            <label class="block text-gray-300 font-bold mb-1">Product Image URL</label>
+            <input type="text" id="prodEdit_image" placeholder="https://example.com/phone.jpg" class="w-full bg-dark-900 border border-yellow-500/20 rounded-xl p-2.5 text-white">
+          </div>
+        </div>
+
+        <button onclick="saveProductFromModal()" class="w-full py-3 bg-gold-gradient text-black font-extrabold rounded-xl shadow-md mt-2">
+          Save Product Item
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FLOATING TELEGRAM CONTACT BUTTON -->
+  <a id="floatingTelegramBtn" href="https://t.me/Hokgod12" target="_blank" rel="noopener noreferrer" aria-label="Contact NKH Store on Telegram"
+    style="position:fixed;right:16px;bottom:16px;z-index:9998;background:#229ED9;color:white;padding:12px 16px;border-radius:999px;font-weight:800;box-shadow:0 4px 18px #0008;display:flex;align-items:center;gap:9px;text-decoration:none">
+    <i class="fa-brands fa-telegram" style="font-size:22px"></i> Telegram
+  </a>
+
+  <!-- ================================================================= -->
+  <!-- JAVASCRIPT APP LOGIC & PERSISTENCE                                -->
+  <!-- ================================================================= -->
+  <script>
+    // DEFAULT INITIAL DATA STORAGE
+    const DEFAULT_DATA = {
+      brand: {
+        logoUrl: 'https://placehold.co/150x150/12131a/ffb300?text=NKH',
+        phoneNum: '+85577817387',
+        telegramAdmin: 'https://t.me/Hokgod12',
+        telegramChannel: 'https://t.me/NKHSTORE1',
+        slogan: 'Cambodia Mobile Authority'
+      },
+      texts: {
+        siteHeaderTitle: 'NKH STORE',
+        siteHeaderSubtitle: 'PREMIUM MOBILE & TECH',
+        headerCallBtnText: 'Call Us',
+        heroHeadline: 'Your next phone starts here.',
+        heroSubtitle: 'Cambodia\'s trusted destination for authentic smartphones, high-grade cases, premium accessories, and hassle-free device pre-orders.',
+        heroShopBtnText: 'Shop Now',
+        heroTelegramBtnText: 'Chat on Telegram',
+        feat1Title: 'New & Used Phones',
+        feat1Desc: 'Factory original 100% brand new or pristine 99% condition phones thoroughly inspected.',
+        feat2Title: 'Trusted & Safe',
+        feat2Desc: '100% authentic guarantee with full warranty backup and direct customer care.',
+        feat3Title: 'Fast Delivery',
+        feat3Desc: 'Swift nationwide shipping across Phnom Penh and all provinces in Cambodia.',
+        feat4Title: 'Pre-Order Available',
+        feat4Desc: 'Reserve upcoming flagship devices or rare storage specs with instant priority setup.',
+        preorderTitle: 'Reserve Your Next Device',
+        preorderSubtitle: 'Lock in rare colors, custom storage capacities, or brand new releases before stock arrives.',
+        preorderNoticeText: 'After clicking submit, your reservation order will be automatically formatted and sent directly to our Telegram manager (@Hokgod12) to confirm stock and deposit instructions.',
+        preorderSubmitBtnText: 'Submit Pre-Order via Telegram',
+        cartHeaderTitle: 'Your Shopping Cart',
+        cartCheckoutBtnText: 'Pay via Telegram',
+        cartCheckoutWarning: 'Orders are finalized & confirmed instantly with NKH Store Telegram Admin.'
+      },
+      labels: {
+        model: 'Device Model *',
+        storage: 'Storage Capacity *',
+        color: 'Preferred Color *',
+        name: 'Your Name *',
+        phone: 'Phone Number *'
+      },
+      products: [
+        {
+          id: 'p1',
+          title: 'iPhone 16 Pro Max',
+          price: 1380.00,
+          category: 'phones',
+          condition: 'Brand New 100%',
+          colors: ['Desert Titanium', 'Natural Titanium', 'Black Titanium'],
+          image: 'https://placehold.co/400x400/12131a/ffb300?text=iPhone+16+Pro+Max'
+        },
+        {
+          id: 'p2',
+          title: 'iPhone 15 Pro Max 256GB',
+          price: 1050.00,
+          category: 'phones',
+          condition: '99% Like New',
+          colors: ['Natural Titanium', 'Blue Titanium'],
+          image: 'https://placehold.co/400x400/12131a/ffb300?text=iPhone+15+Pro+Max'
+        },
+        {
+          id: 'p3',
+          title: 'Luxury MagSafe Armor Case',
+          price: 25.00,
+          category: 'cases',
+          condition: 'New Accessory',
+          colors: ['Dark Gold', 'Jet Black', 'Clear Chrome'],
+          image: 'https://placehold.co/400x400/12131a/ffb300?text=Armor+Case'
+        },
+        {
+          id: 'p4',
+          title: 'Apple 20W USB-C Fast Charger',
+          price: 28.00,
+          category: 'accessories',
+          condition: 'Original 100%',
+          colors: ['White'],
+          image: 'https://placehold.co/400x400/12131a/ffb300?text=20W+Charger'
+        },
+        {
+          id: 'p5',
+          title: 'iPad Pro M4 13-inch',
+          price: 1290.00,
+          category: 'preorder',
+          condition: 'Pre-Order Booking',
+          colors: ['Space Black', 'Silver'],
+          image: 'https://placehold.co/400x400/12131a/ffb300?text=iPad+Pro+M4'
+        }
+      ]
+    };
+
+    // LOCAL STORAGE STATE INITIALIZATION
+    let appData = JSON.parse(localStorage.getItem('nkh_store_app_data')) || JSON.parse(JSON.stringify(DEFAULT_DATA));
+    let cart = JSON.parse(localStorage.getItem('nkh_store_cart')) || [];
+    let adminOrders = JSON.parse(localStorage.getItem('nkh_store_admin_orders')) || [];
+    // Give older catalog entries a starting stock value for the new inventory controls.
+    appData.products.forEach(product => { if (product.stock === undefined || product.stock === null) product.stock = 10; });
+    let currentCategoryFilter = 'all';
+
+    // SECRET LOGO CLICK TRACKER
+    let logoClickCount = 0;
+    let logoClickTimer;
+
+    // ON PAGE LOAD INITIALIZATION
+    window.onload = function() {
+      applyStoredDataToUI();
+      renderProducts();
+      updateCartUI();
+      refreshAdminDashboard();
+    };
+
+    // SAVE STATE TO LOCAL STORAGE
+    function saveData() {
+      localStorage.setItem('nkh_store_app_data', JSON.stringify(appData));
+      applyStoredDataToUI();
+      refreshAdminDashboard();
+    }
+
+    function saveCart() {
+      localStorage.setItem('nkh_store_cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    // APPLY STORED DATA TO UI
+    function applyStoredDataToUI() {
+      // Brand & Images
+      const logoUrl = appData.brand.logoUrl || DEFAULT_DATA.brand.logoUrl;
+      document.getElementById('siteHeaderLogo').src = logoUrl;
+      document.getElementById('heroLogoImage').src = logoUrl;
+
+      // Contact Links
+      const phone = appData.brand.phoneNum || '+85577817387';
+      const telegramAdmin = appData.brand.telegramAdmin || 'https://t.me/Hokgod12';
+      const telegramChannel = appData.brand.telegramChannel || 'https://t.me/NKHSTORE1';
+
+      document.getElementById('headerCallBtn').href = 'tel:' + phone;
+      document.getElementById('contactCardCallBtn').href = 'tel:' + phone;
+
+      document.getElementById('heroTelegramBtn').href = telegramAdmin;
+      document.getElementById('contactCardTelegramBtn').href = telegramAdmin;
+      document.getElementById('footerTelegramLink').href = telegramAdmin;
+
+      document.getElementById('navChannelLink').href = telegramChannel;
+      document.getElementById('mobileNavChannelLink').href = telegramChannel;
+
+      // Apply Text Overrides Across UI
+      const t = appData.texts;
+      for (let key in t) {
+        const el = document.getElementById(key);
+        if (el) el.innerText = t[key];
+      }
+
+      // Apply Field Label Customizations
+      const l = appData.labels;
+      if (l.model && document.getElementById('lbl-model')) document.getElementById('lbl-model').innerText = l.model;
+      if (l.storage && document.getElementById('lbl-storage')) document.getElementById('lbl-storage').innerText = l.storage;
+      if (l.color && document.getElementById('lbl-color')) document.getElementById('lbl-color').innerText = l.color;
+      if (l.name && document.getElementById('lbl-name')) document.getElementById('lbl-name').innerText = l.name;
+      if (l.phone && document.getElementById('lbl-phone')) document.getElementById('lbl-phone').innerText = l.phone;
+    }
+
+    // PAGE SWITCHING CONTROLLER
+    function switchPage(pageId) {
+      document.getElementById('page-home').classList.add('hidden');
+      document.getElementById('page-shop').classList.add('hidden');
+      document.getElementById('page-preorder').classList.add('hidden');
+
+      document.getElementById('page-' + pageId).classList.remove('hidden');
+
+      // Update active nav text color
+      ['navHomeLink', 'navShopLink', 'navPreorderLink'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('text-yellow-400');
+      });
+
+      if (pageId === 'home') document.getElementById('navHomeLink').classList.add('text-yellow-400');
+      if (pageId === 'shop') document.getElementById('navShopLink').classList.add('text-yellow-400');
+      if (pageId === 'preorder') document.getElementById('navPreorderLink').classList.add('text-yellow-400');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // CATEGORY FILTERING
+    function setCategoryFilter(cat) {
+      currentCategoryFilter = cat;
+      document.querySelectorAll('.cat-tab').forEach(btn => {
+        btn.classList.remove('bg-gold-gradient', 'text-black', 'font-extrabold');
+        btn.classList.add('bg-dark-800', 'text-gray-300');
+      });
+
+      const activeBtn = document.getElementById('catTab-' + cat);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-dark-800', 'text-gray-300');
+        activeBtn.classList.add('bg-gold-gradient', 'text-black', 'font-extrabold');
+      }
+
+      renderProducts();
+    }
+
+    // RENDER PRODUCTS IN CATALOG
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const searchTerm = (document.getElementById('searchInput').value || '').toLowerCase();
+
+      let filtered = appData.products.filter(p => {
+        const matchesCategory = currentCategoryFilter === 'all' || p.category === currentCategoryFilter;
+        const matchesSearch = p.title.toLowerCase().includes(searchTerm) || p.condition.toLowerCase().includes(searchTerm);
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-12 text-gray-500">
+            <i class="fa-solid fa-box-open text-4xl mb-3 block"></i>
+            <p class="font-bold text-sm">No products found in this selection.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => {
+        const colorOptions = p.colors && p.colors.length > 0 ? p.colors.map(c => `<option value="${c}">${c}</option>`).join('') : '<option value="Default">Default Color</option>';
+
+        return `
+          <div class="bg-dark-800 border border-yellow-500/20 rounded-2xl p-4 flex flex-col justify-between space-y-4 hover:border-yellow-500/50 transition-all shadow-lg group">
+            <div class="space-y-3">
+              <div class="relative w-full h-48 bg-dark-900 rounded-xl overflow-hidden flex items-center justify-center">
+                <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x400/12131a/ffb300?text=NKH+Device'">
+                <span class="absolute top-2 left-2 bg-yellow-500 text-black text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase shadow">${p.condition}</span>
+              </div>
+
+              <div>
+                <h3 class="text-base font-extrabold text-white">${p.title}</h3>
+                <p class="text-xl font-black text-gold-gradient mt-1">$${parseFloat(p.price).toFixed(2)}</p>
+                <p class="text-[11px] text-gray-400 mt-1">Stock: ${Number(p.stock ?? 10)}</p>
+              </div>
+
+              <div>
+                <label class="block text-[11px] text-gray-400 font-bold mb-1">Select Color:</label>
+                <select id="colorSel-${p.id}" class="w-full bg-dark-900 border border-yellow-500/20 rounded-lg p-2 text-xs text-white">
+                  ${colorOptions}
+                </select>
+              </div>
+            </div>
+
+            <button onclick="addToCart('${p.id}')" class="w-full py-2.5 bg-gold-gradient bg-gold-gradient-hover text-black font-extrabold rounded-xl text-xs flex items-center justify-center gap-2 shadow-md">
+              <i class="fa-solid fa-cart-plus"></i>
+              Add to Cart
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // CART MANAGEMENT LOGIC
+    function addToCart(productId) {
+      const prod = appData.products.find(p => p.id === productId);
+      if (!prod) return;
+
+      const colorSelect = document.getElementById('colorSel-' + productId);
+      const selectedColor = colorSelect ? colorSelect.value : 'Default';
+
+      const existingIndex = cart.findIndex(item => item.id === productId && item.selectedColor === selectedColor);
+
+      if (existingIndex > -1) {
+        cart[existingIndex].qty += 1;
+      } else {
+        cart.push({
+          id: prod.id,
+          title: prod.title,
+          price: prod.price,
+          image: prod.image,
+          selectedColor: selectedColor,
+          qty: 1
+        });
+      }
+
+      saveCart();
+      toggleCartDrawer(true);
+    }
+
+    function updateCartQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      saveCart();
+    }
+
+    function updateCartUI() {
+      const container = document.getElementById('cartItemsContainer');
+      const badge = document.getElementById('cartBadgeCount');
+      const totalEl = document.getElementById('cartTotalPrice');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      badge.innerText = totalItems;
+
+      let totalSum = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-gray-500 space-y-2">
+            <i class="fa-solid fa-basket-shopping text-4xl"></i>
+            <p class="font-bold text-sm">Your cart is currently empty.</p>
+          </div>
+        `;
+        totalEl.innerText = '$0.00';
+        return;
+      }
+
+      container.innerHTML = cart.map((item, idx) => {
+        const itemTotal = item.price * item.qty;
+        totalSum += itemTotal;
+
+        return `
+          <div class="bg-dark-900 border border-yellow-500/20 p-3 rounded-xl flex items-center justify-between gap-3">
+            <img src="${item.image}" alt="${item.title}" class="w-12 h-12 rounded-lg object-cover bg-dark-800">
+            
+            <div class="flex-grow text-xs space-y-1">
+              <h4 class="font-extrabold text-white">${item.title}</h4>
+              <p class="text-gray-400">Color: <span class="text-yellow-400 font-semibold">${item.selectedColor}</span></p>
+              <p class="font-bold text-yellow-400">$${parseFloat(item.price).toFixed(2)}</p>
+            </div>
+
+            <div class="flex items-center gap-2 bg-dark-800 border border-yellow-500/20 rounded-lg p-1">
+              <button onclick="updateCartQty(${idx}, -1)" class="w-6 h-6 flex items-center justify-center text-gray-300 hover:text-white font-bold">-</button>
+              <span class="text-xs font-black px-1">${item.qty}</span>
+              <button onclick="updateCartQty(${idx}, 1)" class="w-6 h-6 flex items-center justify-center text-gray-300 hover:text-white font-bold">+</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      totalEl.innerText = '$' + totalSum.toFixed(2);
+    }
+
+    function toggleCartDrawer(forceOpen = false) {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+
+      if (forceOpen || drawer.classList.contains('translate-x-full')) {
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    function checkoutViaTelegram() {
+      if (cart.length === 0) {
+        alert('Your cart is empty. Add products before checking out.');
+        return;
+      }
+
+      let summary = "🛒 *NEW ORDER FROM NKH STORE WEBSITE*\n\n";
+      let grandTotal = 0;
+
+      cart.forEach((item, i) => {
+        const itemTotal = item.price * item.qty;
+        grandTotal += itemTotal;
+        summary += `${i + 1}. *${item.title}*\n   Color: ${item.selectedColor}\n   Qty: ${item.qty} x $${item.price} = $${itemTotal.toFixed(2)}\n\n`;
+      });
+
+      summary += `💰 *TOTAL AMOUNT: $${grandTotal.toFixed(2)}*\n\nPlease confirm availability and payment options!`;
+
+      recordAdminOrder({
+        type: 'Product order', customer: 'Website customer', phone: '', status: 'Pending', total: grandTotal,
+        items: cart.map(item => ({ title: item.title, qty: item.qty, price: item.price, color: item.selectedColor })),
+        notes: 'Created from the website cart.'
+      });
+
+      const telegramUrl = appData.brand.telegramAdmin || 'https://t.me/Hokgod12';
+      const encodedMsg = encodeURIComponent(summary);
+
+      window.open(`${telegramUrl}?text=${encodedMsg}`, '_blank');
+    }
+
+    // PRE-ORDER SUBMISSION FORM
+    function handlePreorderSubmit(e) {
+      e.preventDefault();
+
+      const model = document.getElementById('preorderModel').value;
+      const storage = document.getElementById('preorderStorage').value;
+      const color = document.getElementById('preorderColor').value;
+      const name = document.getElementById('preorderName').value;
+      const phone = document.getElementById('preorderPhone').value;
+      const notes = document.getElementById('preorderNotes').value || 'None';
+
+      const bookingMsg = `📋 *VIP PRE-ORDER BOOKING - NKH STORE*\n\n` +
+        `📱 *Device:* ${model}\n` +
+        `💾 *Storage:* ${storage}\n` +
+        `🎨 *Color:* ${color}\n` +
+        `👤 *Customer Name:* ${name}\n` +
+        `📞 *Phone Number:* ${phone}\n` +
+        `📝 *Special Notes:* ${notes}\n\n` +
+        `Please confirm reservation deposit details!`;
+
+      recordAdminOrder({
+        type: 'Pre-order', customer: name, phone, status: 'Pending', total: 0,
+        items: [{ title: `${model} (${storage}, ${color})`, qty: 1, price: 0, color }],
+        notes: notes
+      });
+
+      const telegramUrl = appData.brand.telegramAdmin || 'https://t.me/Hokgod12';
+      const encodedMsg = encodeURIComponent(bookingMsg);
+
+      window.open(`${telegramUrl}?text=${encodedMsg}`, '_blank');
+    }
+
+    // =================================================================
+    // ADMIN AUTHENTICATION & SUPER ADMIN MODAL CONTROL
+    // =================================================================
+    function handleLogoClick() {
+      logoClickCount++;
+      clearTimeout(logoClickTimer);
+
+      if (logoClickCount >= 7) {
+        logoClickCount = 0;
+        document.getElementById('adminAuthModal').classList.remove('hidden');
+      } else {
+        logoClickTimer = setTimeout(() => { logoClickCount = 0; }, 3000);
+      }
+    }
+
+    function closeAdminAuthModal() {
+      document.getElementById('adminAuthModal').classList.add('hidden');
+      document.getElementById('adminAuthError').classList.add('hidden');
+      document.getElementById('adminPass1').value = '';
+      document.getElementById('adminPass2').value = '';
+    }
+
+    function verifyAdminAuth() {
+      const p1 = document.getElementById('adminPass1').value;
+      const p2 = document.getElementById('adminPass2').value;
+
+      if (p1 === '1433058904' && p2 === '077817387') {
+        closeAdminAuthModal();
+        openAdminPanel();
+      } else {
+        document.getElementById('adminAuthError').classList.remove('hidden');
+      }
+    }
+
+    function openAdminPanel() {
+      populateAdminFields();
+      document.getElementById('adminPanelModal').classList.remove('hidden');
+    }
+
+    function closeAdminPanel() {
+      document.getElementById('adminPanelModal').classList.add('hidden');
+    }
+
+    function switchAdminTab(tabName) {
+      document.querySelectorAll('[id^="adminTab-"]').forEach(tab => tab.classList.add('hidden'));
+      document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-gold-gradient', 'text-black');
+        btn.classList.add('bg-dark-700', 'text-gray-300');
+      });
+
+      document.getElementById('adminTab-' + tabName).classList.remove('hidden');
+      const activeBtn = document.getElementById('adminTabBtn-' + tabName);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-dark-700', 'text-gray-300');
+        activeBtn.classList.add('bg-gold-gradient', 'text-black');
+      }
+
+      if (tabName === 'products') renderAdminProductList();
+      if (tabName === 'orders') renderAdminOrders();
+      if (tabName === 'dashboard') refreshAdminDashboard();
+    }
+
+    // POPULATE ADMIN FORM INPUTS WITH CURRENT DATA
+    function populateAdminFields() {
+      // Texts
+      for (let key in appData.texts) {
+        const input = document.getElementById('edit_' + key);
+        if (input) input.value = appData.texts[key];
+      }
+
+      // Brand
+      document.getElementById('edit_logoUrl').value = appData.brand.logoUrl || '';
+      document.getElementById('edit_storeSlogan').value = appData.brand.slogan || '';
+
+      // Contacts
+      document.getElementById('edit_phoneNum').value = appData.brand.phoneNum || '';
+      document.getElementById('edit_telegramAdmin').value = appData.brand.telegramAdmin || '';
+      document.getElementById('edit_telegramChannel').value = appData.brand.telegramChannel || '';
+
+      // Labels
+      for (let key in appData.labels) {
+        const input = document.getElementById('edit_lbl_' + key);
+        if (input) input.value = appData.labels[key];
+      }
+    }
+
+    // SAVE ADMIN EDITS
+    function saveAdminTexts() {
+      for (let key in appData.texts) {
+        const input = document.getElementById('edit_' + key);
+        if (input) appData.texts[key] = input.value;
+      }
+      saveData();
+      alert('Site text edits saved successfully!');
+    }
+
+    function saveBrandSettings() {
+      appData.brand.logoUrl = document.getElementById('edit_logoUrl').value;
+      appData.brand.slogan = document.getElementById('edit_storeSlogan').value;
+      saveData();
+      alert('Brand settings saved successfully!');
+    }
+
+    function saveContactSettings() {
+      appData.brand.phoneNum = document.getElementById('edit_phoneNum').value;
+      appData.brand.telegramAdmin = document.getElementById('edit_telegramAdmin').value;
+      appData.brand.telegramChannel = document.getElementById('edit_telegramChannel').value;
+      saveData();
+      alert('Contact and Telegram links saved!');
+    }
+
+    function savePreorderFormSettings() {
+      for (let key in appData.labels) {
+        const input = document.getElementById('edit_lbl_' + key);
+        if (input) appData.labels[key] = input.value;
+      }
+      saveData();
+      alert('Pre-order form field settings saved!');
+    }
+
+    // FACTORY RESET
+    function resetFactoryDefaults() {
+      if (confirm('Are you sure you want to reset all text, images, and products back to original settings?')) {
+        localStorage.removeItem('nkh_store_app_data');
+        appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+        saveData();
+        renderProducts();
+        closeAdminPanel();
+        alert('Factory defaults restored.');
+      }
+    }
+
+    // ADMIN DASHBOARD, ORDER TRACKING, AND CSV EXPORT
+    function saveAdminOrders() {
+      localStorage.setItem('nkh_store_admin_orders', JSON.stringify(adminOrders));
+      refreshAdminDashboard();
+    }
+
+    function recordAdminOrder(order) {
+      const entry = {
+        id: 'NKH-' + Date.now().toString().slice(-8),
+        date: new Date().toISOString(),
+        type: order.type || 'Product order',
+        customer: order.customer || 'Website customer',
+        phone: order.phone || '',
+        status: order.status || 'Pending',
+        total: Number(order.total) || 0,
+        items: Array.isArray(order.items) ? order.items : [],
+        notes: order.notes || ''
+      };
+      adminOrders.unshift(entry);
+      saveAdminOrders();
+      renderAdminOrders();
+    }
+
+    function refreshAdminDashboard() {
+      const set = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
+      set('dashProducts', appData.products.length);
+      set('dashOrders', adminOrders.length);
+      set('dashPending', adminOrders.filter(o => o.status === 'Pending').length);
+      const total = adminOrders.reduce((sum, o) => sum + (Number(o.total) || 0), 0);
+      set('dashValue', '$' + total.toFixed(2));
+    }
+
+    function escapeAdminText(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    }
+
+    function renderAdminOrders() {
+      const container = document.getElementById('adminOrdersList');
+      if (!container) return;
+      const searchEl = document.getElementById('adminOrderSearch');
+      const query = (searchEl ? searchEl.value : '').trim().toLowerCase();
+      const filtered = adminOrders.filter(order => [order.id, order.type, order.customer, order.phone, order.status, order.notes, ...(order.items || []).map(item => item.title)].join(' ').toLowerCase().includes(query));
+      if (!filtered.length) {
+        container.innerHTML = `<div class="bg-dark-900 border border-yellow-500/10 rounded-xl p-5 text-center text-gray-400">${adminOrders.length ? 'No orders match your search.' : 'No orders recorded yet. Checkout or submit a pre-order on this browser to create a record.'}</div>`;
+        refreshAdminDashboard();
+        return;
+      }
+      container.innerHTML = filtered.map(order => {
+        const items = (order.items || []).map(item => `<li>${escapeAdminText(item.title)}${item.qty ? ` × ${Number(item.qty)}` : ''}${item.color ? ` — ${escapeAdminText(item.color)}` : ''}</li>`).join('');
+        const date = order.date ? new Date(order.date).toLocaleString() : 'Date unknown';
+        const statuses = ['Pending', 'Confirmed', 'Completed', 'Cancelled'];
+        return `<div class="bg-dark-900 border border-yellow-500/20 rounded-2xl p-4 space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3"><div><div class="flex flex-wrap items-center gap-2"><span class="font-black text-white">${escapeAdminText(order.id)}</span><span class="px-2 py-1 rounded-full bg-yellow-500/10 text-yellow-300 text-[10px] font-bold">${escapeAdminText(order.type)}</span></div><p class="text-xs text-gray-400 mt-1">${escapeAdminText(date)}</p><p class="text-sm text-white mt-2">${escapeAdminText(order.customer || 'Website customer')} ${order.phone ? '· ' + escapeAdminText(order.phone) : ''}</p></div><div class="sm:text-right"><p class="text-lg font-black text-yellow-400">${Number(order.total) > 0 ? '$' + Number(order.total).toFixed(2) : 'Price not set'}</p><select aria-label="Order status" onchange="updateAdminOrderStatus('${escapeAdminText(order.id)}', this.value)" class="mt-2 bg-dark-800 border border-yellow-500/20 rounded-lg p-2 text-xs text-white">${statuses.map(status => `<option value="${status}" ${order.status === status ? 'selected' : ''}>${status}</option>`).join('')}</select></div></div>
+          <ul class="list-disc pl-5 text-xs text-gray-300 space-y-1">${items || '<li>No item details</li>'}</ul>
+          ${order.notes ? `<p class="text-xs text-gray-400">Notes: ${escapeAdminText(order.notes)}</p>` : ''}
+          <div class="flex justify-end"><button onclick="deleteAdminOrder('${escapeAdminText(order.id)}')" class="px-3 py-1.5 bg-red-500/10 border border-red-500/20 text-red-300 rounded-lg text-xs font-bold">Delete order</button></div>
+        </div>`;
+      }).join('');
+      refreshAdminDashboard();
+    }
+
+    function updateAdminOrderStatus(id, status) {
+      const order = adminOrders.find(item => item.id === id);
+      if (!order) return;
+      order.status = status;
+      saveAdminOrders();
+      renderAdminOrders();
+    }
+
+    function deleteAdminOrder(id) {
+      if (!confirm('Delete this order record? This cannot be undone.')) return;
+      adminOrders = adminOrders.filter(order => order.id !== id);
+      saveAdminOrders();
+      renderAdminOrders();
+    }
+
+    function clearAdminOrders() {
+      if (!adminOrders.length) { alert('There are no order records to clear.'); return; }
+      if (!confirm('Delete ALL saved order records from this browser? This cannot be undone.')) return;
+      adminOrders = [];
+      saveAdminOrders();
+      renderAdminOrders();
+    }
+
+    function exportAdminOrders() {
+      const quote = value => '"' + String(value == null ? '' : value).replace(/"/g, '""') + '"';
+      const rows = [['Order ID','Date','Type','Customer','Phone','Status','Total USD','Items','Notes']];
+      adminOrders.forEach(order => rows.push([order.id, order.date, order.type, order.customer, order.phone, order.status, Number(order.total || 0).toFixed(2), (order.items || []).map(item => `${item.title} x${item.qty || 1}${item.color ? ' (' + item.color + ')' : ''}`).join('; '), order.notes]));
+      const csv = rows.map(row => row.map(quote).join(',')).join('\r\n');
+      const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a'); link.href = url; link.download = 'nkh-store-orders.csv'; link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    // ADMIN PRODUCT CATALOG MANAGEMENT
+    function renderAdminProductList() {
+      const container = document.getElementById('adminProductList');
+      container.innerHTML = appData.products.map(p => `
+        <div class="bg-dark-900 border border-yellow-500/20 p-3 rounded-xl flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <img src="${p.image}" class="w-12 h-12 rounded-lg object-cover bg-dark-800">
+            <div>
+              <h4 class="font-extrabold text-white text-xs">${p.title}</h4>
+              <p class="text-yellow-400 font-bold text-xs">$${parseFloat(p.price).toFixed(2)} | <span class="uppercase text-[10px] text-gray-400">${p.category}</span></p>
+              <p class="text-[10px] text-gray-400 mt-1">Stock: ${Number(p.stock ?? 10)} units</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="openEditProductModal('${p.id}')" class="px-3 py-1.5 bg-yellow-500/20 text-yellow-400 rounded-lg font-bold text-xs">Edit</button>
+            <button onclick="deleteProduct('${p.id}')" class="px-3 py-1.5 bg-red-500/20 text-red-400 rounded-lg font-bold text-xs">Delete</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openAddProductModal() {
+      document.getElementById('productModalTitle').innerText = 'Add New Product';
+      document.getElementById('prodEdit_id').value = '';
+      document.getElementById('prodEdit_title').value = '';
+      document.getElementById('prodEdit_price').value = '';
+      document.getElementById('prodEdit_category').value = 'phones';
+      document.getElementById('prodEdit_condition').value = 'Brand New 100%';
+      document.getElementById('prodEdit_colors').value = 'Gold, Titanium, Black';
+      document.getElementById('prodEdit_stock').value = '10';
+      document.getElementById('prodEdit_image').value = 'https://placehold.co/400x400/12131a/ffb300?text=New+Product';
+
+      document.getElementById('productEditModal').classList.remove('hidden');
+    }
+
+    function openEditProductModal(id) {
+      const p = appData.products.find(item => item.id === id);
+      if (!p) return;
+
+      document.getElementById('productModalTitle').innerText = 'Edit Product';
+      document.getElementById('prodEdit_id').value = p.id;
+      document.getElementById('prodEdit_title').value = p.title;
+      document.getElementById('prodEdit_price').value = p.price;
+      document.getElementById('prodEdit_category').value = p.category;
+      document.getElementById('prodEdit_condition').value = p.condition;
+      document.getElementById('prodEdit_colors').value = p.colors ? p.colors.join(', ') : '';
+      document.getElementById('prodEdit_stock').value = Number(p.stock ?? 10);
+      document.getElementById('prodEdit_image').value = p.image;
+
+      document.getElementById('productEditModal').classList.remove('hidden');
+    }
+
+    function closeProductEditModal() {
+      document.getElementById('productEditModal').classList.add('hidden');
+    }
+
+    function saveProductFromModal() {
+      const id = document.getElementById('prodEdit_id').value;
+      const title = document.getElementById('prodEdit_title').value;
+      const price = parseFloat(document.getElementById('prodEdit_price').value) || 0;
+      const category = document.getElementById('prodEdit_category').value;
+      const condition = document.getElementById('prodEdit_condition').value || '100%';
+      const colorsStr = document.getElementById('prodEdit_colors').value;
+      const colors = colorsStr ? colorsStr.split(',').map(s => s.trim()) : ['Default'];
+      const stock = Math.max(0, Math.floor(Number(document.getElementById('prodEdit_stock').value) || 0));
+      const image = document.getElementById('prodEdit_image').value || 'https://placehold.co/400x400/12131a/ffb300?text=NKH+Item';
+
+      if (!title) {
+        alert('Product title is required.');
+        return;
+      }
+
+      if (id) {
+        // Edit existing
+        const idx = appData.products.findIndex(p => p.id === id);
+        if (idx > -1) {
+          appData.products[idx] = { id, title, price, category, condition, colors, image, stock };
+        }
+      } else {
+        // Add new
+        const newId = 'p_' + Date.now();
+        appData.products.push({ id: newId, title, price, category, condition, colors, image, stock });
+      }
+
+      saveData();
+      renderProducts();
+      renderAdminProductList();
+      closeProductEditModal();
+      alert('Product saved successfully!');
+    }
+
+    function deleteProduct(id) {
+      if (confirm('Delete this product from catalog?')) {
+        appData.products = appData.products.filter(p => p.id !== id);
+        saveData();
+        renderProducts();
+        renderAdminProductList();
+      }
+    }
+
+
+
+  </script>
+
+
+  <!-- NKH STORE HOME PAGE ANIMATION ADD-ON -->
+  <script id="nkh-home-animation-script">
+    (function () {
+      function addNkhHomeAnimations() {
+        const home = document.getElementById('page-home');
+        if (!home || home.dataset.nkhAnimationReady === 'true') return;
+        const hero = home.querySelector(':scope > div');
+        if (!hero) return;
+        home.dataset.nkhAnimationReady = 'true';
+        hero.classList.add('nkh-hero-animated');
+
+        const sparkleLayer = document.createElement('div');
+        sparkleLayer.className = 'nkh-sparkle-layer';
+        sparkleLayer.setAttribute('aria-hidden', 'true');
+        for (let i = 0; i < 18; i++) {
+          const sparkle = document.createElement('span');
+          sparkle.className = 'nkh-sparkle';
+          sparkle.style.setProperty('--x', (4 + Math.random() * 92) + '%');
+          sparkle.style.setProperty('--size', (2 + Math.random() * 3) + 'px');
+          sparkle.style.setProperty('--duration', (7 + Math.random() * 8) + 's');
+          sparkle.style.setProperty('--delay', (-Math.random() * 14) + 's');
+          sparkle.style.setProperty('--drift', (-35 + Math.random() * 70) + 'px');
+          sparkleLayer.appendChild(sparkle);
+        }
+        hero.prepend(sparkleLayer);
+
+        const logoWrap = home.querySelector('#heroLogoImage')?.parentElement?.parentElement;
+        if (logoWrap && !logoWrap.querySelector('.nkh-logo-ring')) {
+          const ringOne = document.createElement('span');
+          ringOne.className = 'nkh-logo-ring';
+          ringOne.setAttribute('aria-hidden', 'true');
+          const ringTwo = document.createElement('span');
+          ringTwo.className = 'nkh-logo-ring nkh-ring-two';
+          ringTwo.setAttribute('aria-hidden', 'true');
+          logoWrap.append(ringOne, ringTwo);
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', addNkhHomeAnimations, { once: true });
+      } else {
+        addNkhHomeAnimations();
+      }
+    })();
+  </script>
+
+
+  <!-- NKH BASIC SOURCE-INSPECTION DETERRENCE (NOT A SUBSTITUTE FOR SERVER SECURITY) -->
+  <style id="nkh-inspection-deterrence">
+    /* Discourage casual text selection/copying; form fields remain usable. */
+    body { -webkit-user-select: none; user-select: none; }
+    input, textarea, select, [contenteditable="true"] {
+      -webkit-user-select: text !important; user-select: text !important;
+    }
+  </style>
+  <script id="nkh-inspection-deterrence-script">
+    (function () {
+      'use strict';
+      // Casual deterrence only: browser-delivered code can still be inspected.
+      document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+      }, true);
+      document.addEventListener('keydown', function (event) {
+        const key = (event.key || '').toLowerCase();
+        const blocked = key === 'f12' ||
+          (event.ctrlKey && event.shiftKey && ['i', 'j', 'c', 'k'].includes(key)) ||
+          (event.ctrlKey && ['u', 's'].includes(key)) ||
+          (event.metaKey && event.altKey && ['i', 'j', 'c'].includes(key));
+        if (blocked) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }, true);
+    })();
+  </script>
+
+  <!-- NKH SMOOTH SCROLL + VIEW REVEAL -->
+  <style id="nkh-smooth-scroll-view">
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body { scroll-behavior: smooth; }
+    /* Faster, responsive scroll-to-section movement while keeping it smooth. */
+    :target { scroll-margin-top: 84px; }
+    @media (pointer: fine) {
+      html { overscroll-behavior-y: contain; }
+    }
+    /* Reveal content gently as it enters the viewport. */
+    .nkh-view-reveal {
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 180ms ease-out, transform 200ms ease-out;
+      /* Avoid creating a GPU layer for every hidden card while scrolling. */
+    }
+    .nkh-view-reveal.nkh-view-visible {
+      opacity: 1;
+      transform: none;
+    }
+    /* Keep scrolling responsive on phones and avoid expensive scroll-linked effects. */
+    @media (max-width: 768px) {
+      .nkh-view-reveal { transform: none; transition: opacity 160ms ease-out; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html, body { scroll-behavior: auto !important; }
+      .nkh-view-reveal, .nkh-view-reveal.nkh-view-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        will-change: auto !important;
+      }
+    }
+  </style>
+  <script id="nkh-smooth-scroll-view-script">
+    (function () {
+      'use strict';
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
+
+      const selectors = [
+        '#page-home section', '#page-home article', '#page-home .grid > *',
+        '#page-products section', '#page-products article', '#page-products .grid > *',
+        '#page-about section', '#page-about article', '#page-about .grid > *',
+        '#page-contact section', '#page-contact article', '#page-contact .grid > *'
+      ].join(',');
+
+      let observer;
+      function revealElement(el) {
+        if (!el || el.classList.contains('nkh-view-reveal')) return;
+        el.classList.add('nkh-view-reveal');
+        if (observer) observer.observe(el);
+        else el.classList.add('nkh-view-visible');
+      }
+      function scan() {
+        if (!('IntersectionObserver' in window)) {
+          document.querySelectorAll(selectors).forEach(el => el.classList.add('nkh-view-visible'));
+          return;
+        }
+        if (!observer) {
+          observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('nkh-view-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.08, rootMargin: '0px 0px -35px 0px' });
+        }
+        document.querySelectorAll(selectors).forEach(revealElement);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', scan, { once: true });
+      } else scan();
+
+      // Re-scan after page switches or when product cards are rendered dynamically.
+      document.addEventListener('click', function (event) {
+        if (event.target.closest('button, a, [role="button"]')) {
+          window.setTimeout(scan, 80);
+          window.setTimeout(scan, 350);
+        }
+      }, true);
+      const main = document.querySelector('main') || document.body;
+      if ('MutationObserver' in window) {
+        let scanQueued = false;
+        new MutationObserver(() => {
+          if (scanQueued) return;
+          scanQueued = true;
+          requestAnimationFrame(() => {
+            scanQueued = false;
+            scan();
+          });
+        }).observe(main, { childList: true, subtree: true });
+      }
+    })();
+  </script>
+
+</body>
+</html>
